@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <script>
+        function clicked(){
+
+            var cred = []
+            var credinput = document.getElementsByClassName("credit")
+            Array.from(credinput).forEach(ele => {
+                cred.push(ele.value)
+            })
+            var nam = []
+            var naminput = document.getElementsByClassName("grade")
+            Array.from(naminput).forEach(ele => {
+                nam.push(ele.value)
+            })
+            var namnum = []
+            Array.from(nam).forEach(ele => {
+                if (ele === 's'){
+                    namnum.push(10)
+                }
+                else if (ele === 'a'){
+                    namnum.push(9)
+                }
+                else if (ele === 'b'){
+                    namnum.push(8)
+                }
+                else if (ele === 'c'){
+                    namnum.push(7)
+                }
+                else if (ele === 'd'){
+                    namnum.push(6)
+                }
+                else{
+                    namnum.push(0)
+                }
+            })
+            var sum = 0
+            for (let x in cred){
+                sum = sum + parseInt(cred[x])
+            }
+            var numerator = 0
+            for (let x in namnum){
+                numerator = numerator + (parseInt(cred[x]))*(parseInt(namnum[x]))
+            }
+            alert("The CGPA is "+(numerator/sum))
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        {% for i in range(subj) %}
+            <p>
+                <input type="text" class="grade" placeholder="Enter the grade">
+                <input type="number" class="credit" placeholder="Enter the credits">
+            </p>
+        {% endfor %}
+    </form>
+    <button onclick="clicked()">SUBMIT</button>
+</body>
+</html>
