@@ -7,4 +7,4 @@ To Run it follow these steps :
 2. Now open command prompt and navigate to the folder containing these files
 3. Run the following code "set FLASK_APP=cgpacalc.py"
 4. After this press Enter and type "flask run"
-5. After this you will receive some instructions along with a line stating that it is running on server 127.0.0.1:5000
+5. After this it will be running on the local host server
